@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { SlashCreator, FastifyServer } = require('slash-create');
+const { SlashCreator, VercelServer } = require('slash-create');
 const path = require('path');
 const CatLoggr = require('cat-loggr');
 const logger = new CatLoggr().setLevel(process.env.COMMANDS_DEBUG === 'true' ? 'debug' : 'info');
@@ -23,8 +23,7 @@ creator.on('commandRegister', (command) =>
 creator.on('commandError', (command, error) => logger.error(`Command ${command.commandName}:`, error));
 
 creator
-  .withServer(new FastifyServer())
-  .registerCommandsIn(path.join(__dirname, 'commands'))
-  .startServer();
+  .withServer(new VercelServer())
+  .registerCommandsIn(path.join(__dirname, 'commands'));
 
 console.log(`Starting server at "localhost:${creator.options.serverPort}/interactions"`);
