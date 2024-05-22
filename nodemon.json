@@ -1,0 +1,6 @@
+{
+  "watch": "**",
+  "ext": "ts,json,js",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "npm run sync:dev && node src/index.js"
+}
