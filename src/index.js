@@ -26,4 +26,6 @@ creator
   .withServer(new VercelServer())
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-console.log(`Starting server at "localhost:${creator.options.serverPort}/interactions"`);
+module.exports = creator.server.vercelEndpoint;
+
+console.log(`${creator.server.vercelEndpoint}`);
