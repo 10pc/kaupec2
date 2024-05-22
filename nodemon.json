@@ -1,6 +1,6 @@
 {
   "watch": "**",
-  "ext": "ts,json,js",
+  "ext": "json,js",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "npm run sync:dev && node src/index.js"
+  "exec": "npm run sync:dev && node localtest.js"
 }
