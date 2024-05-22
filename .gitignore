@@ -12,7 +12,6 @@ logs/
 .vscode/**/*
 !.vscode/extensions.json
 .env
-api/interactions.js
 slash-up.config.js
 localtest.js
 .prettierrc
